@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Banca S.Paolo MERDA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Banca Intesa S.Paolo.</h1><h3>La mia banca di merda</h3>
+        <h2>BANCA TSS</h2> 
+        <br/> 
+        <div> Saldo corrente: <span id="sp_saldo">0</span> €</div>
+        <br/>
+        <div class="versamenti">
+            <!-- titolo n°3 --> 
+            <h3>Versamenti </h3>
+            Importo da versare <input id="in_vers" type="text"
+                                      value="" placeholder="SGANCIA BELLO xD"/>
+        
+            <button id="bt_vers" onclick="versaImporto()">
+                0K, Sgancio! :(
+            </button>
+        </div>
+        <div class="prelievi">
+            <!-- titolo n°4 --> 
+            <h3>Prelievi </h3>
+            Importo da prelevare <input id="in_prel" type="text"
+                                        value="" placeholder="Fottimi (>_<)'"/>
+        
+            <button id="bt_vers" onclick="prelevaImporto()">
+                0K, Ti F0TT0! (^_^)
+            </button>
+        </div>
+        <br/>
+        <div id="div_notifiche">area notifiche: <span id="sp_notif" 
+            <blink>nulla da segnalare</blink> </span></div>
+        <div id="div_mov">
+            <h2>MOVIMENTI</h2>
+            <table border="1" style="width: 100%"
+                <tr>
+                    <th>Versamenti</th><th>Prelievi</th>
+                </tr>
+                <tr> <!--contenuto del td 123<br><br/> -->
+                    <td id="td_vers"></td>
+                    <td id="td_prev"></td>
+                </tr>
+                <tr>
+                    <t
+                </tr>
+        </div>
+       
+    </body>
+</html>
+<script>
+  
+function versaImporto() {
+    /*se in in_vers c'è qualcosa di errato non fare nulla ed avvertire
+    if (condizione) {
+        //cosa fare se vero
+    }
+    else {
+        //cosa fare se falso
+    }
+    */
+    
+    
+    // metto la frase ad esempio "123" a $saldo_current
+        var txsaldo_current = document.getElementById("sp_saldo").innerHTML;
+    // metto la frase ad esempio "123" a $saldo_current
+        var tximporto_current = document.getElementById("in_vers").value;
+        // var saldo=saldo_current*1
+            var saldo = Number.parseFloat(txsaldo_current);
+            
+    if (isNaN(tximporto_current)){
+        alert("Non hai scritto un Numero, andicappato!")
+        
+    }
+    else {
+        var importo = Number.parseFloat(tximporto_current);
+        //sommo finalmente due numeri e NON due testi
+        var nuovo_saldo = saldo+importo;
+    //imposto il nuovo valore nello span sp_saldo
+    document.getElementById("sp_saldo").innerHTML = nuovo_saldo;
+    document.getElementById("in_vers").value = "";
+    
+//sistemo MOVIMENTI
+    // leggo contenuto della cella "td_vers"
+        var txtd_vers = document.getElementById("td_vers").innerHTML;
+    // txtdtxtd_vers = "123<br>" + "200" + "<br/>"
+    //gli aggiungo il nuovo importo + br --> (l'acapo)
+    txtd_vers =txtd_vers + tximporto_current + "<br/>";
+    // idem per td_prev ma solo "-<br/>"
+    var txtd_prev = document.getElementById("td_prev").innerHTML;
+    txtd_prev = txtd_prev + "-<br/>";
+    document.getElementById("td_vers").innerHTML = txtd_vers;
+    document.getElementById("td_prev").innerHTML = txtd_prev;
+ 
+    }    
+    
+}
+
+function prelevaImporto() {
+    // metto la frase ad esempio "123" a $saldo_current
+        var txsaldo_current = document.getElementById("sp_saldo").innerHTML;
+    // metto la frase ad esempio "123" a $saldo_current
+        var tximporto_current = document.getElementById("in_prev").value;
+        // var saldo=saldo_current*1
+            var saldo = Number.parseFloat(txsaldo_current);
+            var importo = Number.parseFloat(tximporto_current);
+        //sommo finalmente due numeri e NON due testi
+        var nuovo_saldo = saldo-importo;
+    //imposto il nuovo valore nello span sp_saldo
+    document.getElementById("sp_saldo").innerHTML = nuovo_saldo;
+    document.getElementById("in_prev").value = "";
+   
+//sistemo MOVIMENTI
+    // leggo contenuto della cella "td_prev"
+    var txtd_prev = document.getElementById("td_prev").innerHTML;
+    // txtdtxtd_prev = "123<br>" + "200" + "<br/>"
+    //gli aggiungo il nuovo importo + br --> (l'acapo)
+    txtd_prev = txtd_prev +  tximporto_current  + "<br/>";
+    // idem per td_vers ma solo "-<br/>"
+    var txtd_vers = document.getElementById("td_vers").innerHTML;
+    txtd_vers = txtd_vers + "-<br/>";
+    document.getElementById("td_vers").innerHTML = txtd_vers;
+    document.getElementById("td_prev").innerHTML = txtd_prev;
+
+}
+
+</script>
