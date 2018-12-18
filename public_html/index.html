@@ -12,8 +12,14 @@ and open the template in the editor.
     </head>
     <body>
         <h1>Banca Intesa S.Paolo.</h1><h3>La mia banca di merda</h3>
-        <h2>BANCA TSS</h2> 
+        <h2>BANCA TSS <span id="sp_namecc"></span> </h2> 
+        <input id="in_name" type="text" value="" placeholder="Nome"/> 
+        <button id="bt_login" onclick="login()">
+            Log In
+        </button>
+
         <br/> 
+        <br/>
         <div> Saldo corrente: <span id="sp_saldo">0</span> €</div>
         <br/>
         <div class="versamenti">
@@ -55,6 +61,15 @@ and open the template in the editor.
     </body>
 </html>
 <script>
+    function login() {
+
+      // recupero oggetto input testo
+        var txlogin = document.getElementById("in_name").value;
+        document.getElementById("sp_namecc").innerHTML=document.getElementById("in_name").value;
+
+
+
+    }
 
     function versaImporto() {
         /*se in in_vers c'è qualcosa di errato non fare nulla ed avvertire
