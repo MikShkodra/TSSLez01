@@ -9,11 +9,24 @@ and open the template in the editor.
         <title>Banca S.Paolo MERDA</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #banca {
+                display:none;
+                
+            }
+        </style>
     </head>
     <body>
         <h1>Banca Intesa S.Paolo.</h1><h3>La mia banca di merda</h3>
         <h2>BANCA TSS <span id="sp_namecc"></span> </h2> 
-        <input id="in_name" type="text" value="" placeholder="Nome"/> 
+        <input id="in_name" type="text" value="" placeholder="Nome"/>         
+        <div id="login">
+            <h2>LOGIN</h2>
+            <input type="text" id="in_usr" placeholder="ins. username"/><br/>
+            <input type="password" id="in_pwd" placeholder="ins. password"/><br/>
+            <input type="text" id="in_tkn" placeholder="ins. token"/><br/>
+            <button onclick="loginUser()">Login</button>
+        </div>
         <button id="bt_login" onclick="login()">
             Log In
         </button>
@@ -63,9 +76,9 @@ and open the template in the editor.
 <script>
     function login() {
 
-      // recupero oggetto input testo
+        // recupero oggetto input testo
         var txlogin = document.getElementById("in_name").value;
-        document.getElementById("sp_namecc").innerHTML=document.getElementById("in_name").value;
+        document.getElementById("sp_namecc").innerHTML = document.getElementById("in_name").value;
 
 
 
