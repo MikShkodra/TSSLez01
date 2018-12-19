@@ -14,7 +14,7 @@ and open the template in the editor.
         <div id="login">
             <h2>LOGIN</h2>
             <input type="text" id="in_usr" placeholder="ins. username"/><br/>
-            <input type="text" id="in_pwd" placeholder="ins. password"/><br/>
+            <input type="password" id="in_pwd" placeholder="ins. password"/><br/>
             <input type="text" id="in_tkn" placeholder="ins. token"/><br/>
             <button onclick="loginUser()">Login</button>
             
@@ -25,12 +25,22 @@ and open the template in the editor.
 
 <script>
     function loginUser(){
+        var okusr="Milk9387";
+        var okpwd="8luglio1993";
+        var oktkn="JubanShkoder";
+        
         var usr = document.getElementById("in_usr").value;
         var pwd = document.getElementById("in_pwd").value;
         var tkn = document.getElementById("in_tkn").value;
         
-        
-        
+        if ( (usr == okusr && pwd == okpwd) || tkn == oktkn) {
+            //cosa fare se vero, quindi 0K!
+            alert("Ok, allowed!")
+        }
+        else {
+            //cosa fare se NOTvero, quindi ERRATO!!
+            alert("N0pe, Access DENIED!")
+        }
     }
         
     
