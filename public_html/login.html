@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Learning Profile Access</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -20,7 +20,6 @@ and open the template in the editor.
         </div>
     </body>
 </html>
-
 <script>
     function loginUser(){
         var okusr="Milk9387";
@@ -34,6 +33,8 @@ and open the template in the editor.
         if ( (usr == okusr && pwd == okpwd) || tkn == oktkn) {
             //cosa fare se vero, quindi 0K!
             alert("Ok, allowed!")
+            document.getElementById("banca").style.dispaly = "block";
+            document.getElementById("login").style.dispaly = "none";
         }
         else {
             //cosa fare se NOTvero, quindi ERRATO!!
